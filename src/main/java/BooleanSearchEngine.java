@@ -7,6 +7,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class BooleanSearchEngine implements SearchEngine {
+    static File stopFile = new File("stop-ru.txt");
+    static List<String> stopList = new ArrayList<>();
     protected Map<String, List<PageEntry>> map = new HashMap<>();
 
     public BooleanSearchEngine(File pdfsDir) throws IOException {
@@ -89,8 +91,7 @@ public class BooleanSearchEngine implements SearchEngine {
     }
 
     public static List<String> deleteStopWords(List<String> words) throws IOException {
-        File stopFile = new File("stop-ru.txt");
-        List<String> stopList = new ArrayList<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(stopFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
