@@ -15,7 +15,7 @@ public class Client {
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
-            String word = "бизнес";
+            String word = "БИЗНЕС";
             //String word = "такогоСловаНет";
             out.println(word);
             System.out.println("Ответ сервера: " + in.readLine());
