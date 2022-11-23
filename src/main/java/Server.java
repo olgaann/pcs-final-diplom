@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Collection;
 import java.util.List;
 
 public class Server {
@@ -29,8 +30,8 @@ public class Server {
                         PrintWriter out = new PrintWriter(socket.getOutputStream());
                 ) {
                     // обработка одного подключения
-                    String word = in.readLine(); //принимаем строку со словом от клиента
-                    List<PageEntry> list = engine.search(word);
+                    String words = in.readLine(); //принимаем строку со словом от клиента
+                    List<PageEntry> list = engine.search(words);
 
                     String reply = list.isEmpty() ? String.valueOf(list) : gson.toJson(list);
                     out.println(reply);

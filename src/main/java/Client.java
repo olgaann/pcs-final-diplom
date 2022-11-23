@@ -15,9 +15,12 @@ public class Client {
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
-            String word = "БИЗНЕС";
-            //String word = "такогоСловаНет";
-            out.println(word);
+
+            String words = "  свойство ПРОДвижение свойство Однако  ";
+            //String words = "бизнес";
+            //String words = "такогоСловаНет";
+            out.println(words);
+
             System.out.println("Ответ сервера: " + in.readLine());
 
         } catch (IOException e) {
